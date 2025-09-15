@@ -385,4 +385,206 @@ export default function App() {
       <main>
         <Hero t={t} />
 
-        <Section id={slugify(t.
+        <Section id={slugify(t.nav[1])} title={t.visionTitle}>
+          <div className="grid md:grid-cols-2 gap-6">
+            <p className="text-lg leading-relaxed">{t.visionBody}</p>
+            <div className="flex flex-wrap gap-2">
+              <Pill>Made in Germany</Pill>
+              <Pill>30-Year Warranty</Pill>
+              <Pill>Hundegger · Weinmann</Pill>
+              <Pill>BIM / CNC</Pill>
+            </div>
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[2])} title={t.capabilitiesTitle}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {t.capabilities.map((c) => (
+              <div
+                key={c}
+                className="rounded-2xl border border-black/10 dark:border-white/15 p-5 hover:-translate-y-0.5 transition"
+              >
+                <div className="text-lg font-semibold">{c}</div>
+                <div className="mt-2 text-sm text-black/70 dark:text-white/70">
+                  {/* краткое описание-плейсхолдер */}
+                  Präzise Planung · Vorfertigung · Montage
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[3])} title={t.timelineTitle}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[2010, 2016, 2022].map((year) => (
+              <div
+                key={year}
+                className="rounded-2xl border border-black/10 dark:border-white/15 p-5"
+              >
+                <div className="text-2xl font-semibold">{year}</div>
+                <div className="mt-2 text-sm text-black/70 dark:text-white/70">
+                  Milestone / Projekt · Zertifizierung · Maschinenpark
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[4])} title={t.portfolioTitle}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <a
+                key={i}
+                href="#"
+                className="aspect-video rounded-2xl border border-black/10 dark:border-white/15 grid place-content-center hover:-translate-y-0.5 transition"
+              >
+                <span className="text-sm text-black/60 dark:text-white/60">
+                  Project #{i}
+                </span>
+              </a>
+            ))}
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[5])} title={t.techTitle}>
+          <div className="flex flex-wrap gap-2">
+            <Pill>Dietrich’s</Pill>
+            <Pill>RFEM 6</Pill>
+            <Pill>FRILO</Pill>
+            <Pill>Ubakus</Pill>
+            <Pill>CNC · Hundegger</Pill>
+            <Pill>Weinmann</Pill>
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[6])} title={t.certificatesTitle}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {["CE", "EN 1090", "PEFC", "5-Sterne Zimmerei"].map((c) => (
+              <div
+                key={c}
+                className="rounded-2xl border border-black/10 dark:border-white/15 p-5"
+              >
+                <div className="text-lg font-semibold">{c}</div>
+                <div className="mt-2 text-sm text-black/70 dark:text-white/70">
+                  Nachweise & Qualitätssicherung
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[7])} title={t.mediaKitTitle}>
+          <div className="rounded-2xl border border-black/10 dark:border-white/15 p-5">
+            <div className="text-sm text-black/70 dark:text-white/70">
+              Logos, Brand-Guide, Fotos. Kontaktieren Sie uns für Presse-Kit.
+            </div>
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[8])} title={t.careersTitle}>
+          <div className="rounded-2xl border border-black/10 dark:border-white/15 p-5">
+            <div className="text-sm text-black/70 dark:text-white/70">
+              Wir suchen Zimmerer, Konstrukteure (Dietrich’s), Statiker (RFEM/FRILO).
+            </div>
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[9])} title={t.mapTitle}>
+          <div className="rounded-2xl border border-black/10 dark:border-white/15 p-5">
+            <div className="flex items-center gap-2 text-sm">
+              <MapPin className="h-4 w-4" />
+              <span>{t.address}</span>
+            </div>
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[10])} title={t.pressTitle}>
+          <div className="rounded-2xl border border-black/10 dark:border-white/15 p-5">
+            <div className="text-sm text-black/70 dark:text-white/70">
+              Presseanfragen: bitte per E-Mail. Wir stellen Material und Zahlen bereit.
+            </div>
+          </div>
+        </Section>
+
+        <Section id={slugify(t.nav[11])} title={t.contactTitle}>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl border border-black/10 dark:border-white/15 p-5">
+              <p className="text-sm text-black/70 dark:text-white/70">{t.contactLead}</p>
+              <div className="mt-4 space-y-2 text-sm">
+                <div className="flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  <a className="underline" href="mailto:info@rottmueller-holzbau.de">
+                    info@rottmueller-holzbau.de
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  <a className="underline" href="tel:+498061123456">+49 (0) 8061 123456</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>{t.address}</span>
+                </div>
+              </div>
+            </div>
+            <form
+              className="rounded-2xl border border-black/10 dark:border-white/15 p-5 grid gap-3"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <input className="rounded-xl px-3 py-2 bg-black/5 dark:bg-white/10" placeholder="Name" />
+              <input className="rounded-xl px-3 py-2 bg-black/5 dark:bg-white/10" placeholder="Email" />
+              <textarea rows={4} className="rounded-xl px-3 py-2 bg-black/5 dark:bg-white/10" placeholder="Message" />
+              <button className="rounded-xl px-4 py-2 bg-black text-white dark:bg-white dark:text-black font-semibold">
+                Send
+              </button>
+            </form>
+          </div>
+        </Section>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-black/10 dark:border-white/10 mt-16">
+        <section className="w-full max-w-7xl mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row items-start justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 rounded-xl border border-black/15 dark:border-white/20 grid place-content-center">
+              <span className="font-bold" style={{ color: "#008000" }}>
+                R
+              </span>
+            </div>
+            <div>
+              <p className="font-semibold">{t.brand}</p>
+              <p className="text-black/60 dark:text-white/60">{t.address}</p>
+            </div>
+          </div>
+
+          <div className="text-sm">
+            <a className="underline mr-3" href="/datenschutz.html">
+              {t.privacy}
+            </a>
+            <a className="underline" href="/impressum.html">
+              {t.imprint}
+            </a>
+          </div>
+
+          <div className="text-sm">
+            <span className="font-semibold">E:</span>{" "}
+            <a className="underline" href="mailto:info@rottmueller-holzbau.de">
+              info@rottmueller-holzbau.de
+            </a>
+          </div>
+        </section>
+      </footer>
+
+      {/* Mobile overlay */}
+      <NavOverlay
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        lang={lang}
+        setLang={setLang}
+        theme={theme}
+        setTheme={setTheme}
+        t={t}
+      />
+    </div>
+  );
+}
