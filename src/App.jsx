@@ -194,9 +194,8 @@ function PageHero({ title, subtitle, image }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"], // пока секция уходит, анимируем
+    offset: ["start start", "end start"],
   });
-  // Параллакс/зум — минималистично
   const y = useTransform(scrollYProgress, [0, 1], [0, -90]);
   const scale = useTransform(scrollYProgress, [0, 1], [1.06, 1]);
 
@@ -250,9 +249,7 @@ function Header({ t, lang, setLang, theme, setTheme }) {
               <NavLink key={item.to} to={item.to} end={item.to==="/"}>
                 {({ isActive }) => (
                   <span
-                    className={`relative inline-block px-3 py-1.5 rounded-lg transition ${
-                      isActive ? "bg-black/5 dark:bg-white/10" : "hover:bg-black/5 dark:hover:bg-white/10"
-                    }`}
+                    className={`relative inline-block px-3 py-1.5 rounded-lg transition ${isActive ? "bg-black/5 dark:bg-white/10" : "hover:bg-black/5 dark:hover:bg-white/10"}`}
                   >
                     {item.label}
                     {isActive && (
@@ -378,7 +375,7 @@ function AboutPage({ t }) {
   return (
     <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit">
       <PageHero title={t.nav[1].label} subtitle={t.aboutLede} image={t.heroImage}/>
-      <section className="w-full max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16">
+      <section className="w-full max-w-7xl mx_auto px-6 md:px-10 py-12 md:py-16">
         <motion.ul className="space-y-3" variants={reveal} initial="hidden" animate="show">
           {t.bullets.map((b,i)=>(
             <li key={b} className="flex items-start gap-2">
@@ -434,8 +431,8 @@ function ContactPage({ t }) {
           </Card>
           <form className="grid gap-3" onSubmit={(e)=>e.preventDefault()}>
             <input className="rounded-xl px-3 py-2 border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/10" placeholder={t.ui.name}/>
-            <input className="rounded-xl px-3 py-2 border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/10" placeholder={t.ui.emailLabel}/>
-            <textarea rows={5} className="rounded-xl px-3 py-2 border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/10" placeholder={t.ui.message}/>
+            <input className="rounded-xl px-3 py-2 border border_black/15 dark:border-white/20 bg-black/5 dark:bg-white/10" placeholder={t.ui.emailLabel}/>
+            <textarea rows={5} className="rounded-xl px-3 py-2 border border_black/15 dark:border-white/20 bg-black/5 dark:bg-white/10" placeholder={t.ui.message}/>
             <button className="rounded-xl px-4 py-2 bg-black text-white dark:bg-white dark:text-black font-semibold">
               {t.ui.send}
             </button>
